@@ -9,12 +9,12 @@
         $sql="Select * from `carcorridor`.`users` where email = '$email' AND pass ='$pass'";
         $result = mysqli_query($conn,$sql);
         $num = mysqli_num_rows($result);
-        $data = mysqli_fetch_assoc($result);
+        $data = mysqli_fetch_array($result);
         if($num==1){
             $login = true;
             $_SESSION['loggedin'] = $login;
             $_SESSION['username'] = $data['username'];
-            $_SESSION['email'] = $data['email'];
+            $_SESSION['email'] = $data['email'];    
             header("location:Main.php");
         }
         else{
@@ -22,26 +22,3 @@
         }
     }
 ?>
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta name="viewport" content="width=device-width,initial-scale=1.0">
-        <link rel="stylesheet" href="loginstyle.css">
-        <title>LForm</title>
-    </head>
-    <body>
-        <div id="RForm" class="a">
-            <div id="SignUp">
-                <h3>LogIn</h3>    
-            </div>
-            <form  id="Form" method="post">
-                <label id="emailtext">Enter Email</label>
-                <input type="email" name="email" id="email" class="b" placeholder="EMAIL"><br>
-                <label id="passtext">Enter Password</label>
-                <input type="password" name="pass" id="pass" class="b" placeholder="PASSWORD"><br>
-                <a href="SignUp.php" id="gotologin">Dont Have Account? SignUp</a><br><br>
-                <button id="submmit">LOGIN</button>
-            </form>
-        </div>
-    </body>
-</html>

@@ -668,38 +668,40 @@
     </script>
     <body>
     <div id="nevimage">
-        <div id="nevbar">
+    <div id="nevbar">
             <div id="title"><h1><b style="color: red;">C</b>ar<b style="color: red;">C</b>orridor</h1></div>
             <div id="profilebox">
                 <button id="Profile"></button>
                 <div id="Account">
                     <label id="usernameText">USERNAME</label><br>
-                    <div id="username"><?php echo $_SESSION['username']?></div><br>
+                    <div id="username" style="color:black;"><?php echo $_SESSION['username']?></div><br>
                     <label id="emailText" >EMAIL</label><br>
-                    <div id="email"><?php echo $_SESSION['email']?></div>
+                    <div id="email" style="color:black;"><?php echo $_SESSION['email']?></div>
                     <form method="post" action="logout.php"><button id="logout">LogOut</button></form>
                 </div>
             </div>
             <div id="tag">
-                <div id="HomeBG"><a href="Main.php" style="color:black;"><div id="Home" >Home</div></a></div>
+                <div id="HomeBG"><div id="Home" >Home</div></div>
                 <div id="BuyBG"><div id="Buy">Buy Cars</div>
                     <div id="buyoption">
-                      <a href="ExploreNewCars.php" style="text-decoration: none;color:black;"><option id="buynewcar">Buy New Cars</option><a><hr>
+                        <a href="ExploreNewCars.php" style="text-decoration: none;color:black;"><option id="buynewcar">Buy New Cars</option><a><hr>
                         <a href="buyoldcars.php" style="text-decoration: none;color:black;"><option id="buyoldcar">Buy Old Cars</option></a><hr>
-                        <option id="comparecar">Compare Cars</option><hr>
-                        <option id="buyinghistory">Buying History</option>
+                        <a href="" style="text-decoration: none;color:black;"><option id="comparecar">Compare Cars</option></a><hr>
+                        <a href="" style="text-decoration: none;color:black;"><option id="buyinghistory">Buying History</option></a>
                     </div>
                 </div>
                 <div id="SellBG"><div id="Sell">Sell Cars</div>
                     <div id="selloption">
-                        <option id="sellmycar">Sell My Car</option><hr>
-                        <option id="sellinghistory">Selling History</option>
+                        <a href="sellmycars.php" style="text-decoration: none;color:black;"><option id="sellmycar">Sell My Car</option></a><hr>
+                        <a href="" style="text-decoration: none;color:black;"><option id="sellinghistory">Selling History</option></a>
                     </div>
                 </div>
                 <div id="InfoBG"><div id="Info">Cars Info.</div></div>
                 <div id="ServicesBG"><div id="Services">Services</div></div>
             </div>  
             <div id="hrline"></div> 
+            </div>
+        </div>
               <form id="sellform" method="post" enctype="multipart/form-data">
                 <div id="header">ENTER DETAILS TO SELL CAR</div>
                 <label id="brandtext">Select Brand</label>
@@ -813,8 +815,9 @@
                 <label id="pricetext">Price</label>
                 <input type="number" style="font-size: large;text-align:center;" id="price" placeholder="Rs 00,00,000" name="price" required><br><br>
                 <button type="submit" id="sellbutton">Submit</button>
-              </form>
-        </div>
-    </div>
+              </form><br>
+          <div style="height:10px;position:absolute;top:120%;">
+          -
+          </div>
     </body>
 </html>

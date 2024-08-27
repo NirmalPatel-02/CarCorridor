@@ -1,41 +1,42 @@
-<?php 
-    session_start();
-    function moneyFormatIndia($num) {
-        $explrestunits = "" ;
-        if(strlen($num)>3) {
-            $lastthree = substr($num, strlen($num)-3, strlen($num));
-            $restunits = substr($num, 0, strlen($num)-3); // extracts the last three digits
-            $restunits = (strlen($restunits)%2 == 1)?"0".$restunits:$restunits; // explodes the remaining digits in 2's formats, adds a zero in the beginning to maintain the 2's grouping.
-            $expunit = str_split($restunits, 2);
-            for($i=0; $i<sizeof($expunit); $i++) {
-                // creates each of the 2's group and adds a comma to the end
-                if($i==0) {
-                    $explrestunits .= (int)$expunit[$i].","; // if is first value , convert into integer
-                } else {
-                    $explrestunits .= $expunit[$i].",";
-                }
-            }
-            $thecash = $explrestunits.$lastthree;
-        } else {
-            $thecash = $num;
-        }
-        return $thecash; // writes the final format where $currency is the currency symbol.
+<?php
+    include("connection.php");
+    if($_SERVER['REQUEST_METHOD']== "POST"){
+        $brand = $_POST['brand'];
+        $carname = $_POST['carname'];
+        $price = $_POST['price'];
+        $engine = $_POST['engine'];
+        $power = $_POST['power'];
+        $torque = $_POST['torque'];
+        $trans = $_POST['trans'];
+        $mileage = $_POST['mileage'];
+        $fuel = $_POST['fuel'];
+        $cylinder = $_POST['cylinder'];
+        $capacity = $_POST['capacity'];
+        $fuelcapacity = $_POST['fuelcapacity'];
+        $steering = $_POST['steering'];
+        $airbag = $_POST['airbag'];
+        $ac = $_POST['ac'];
+        $petrolbm = $_POST['petrolbm'];
+        $cngbm = $_POST['cngbm'];
+        $petroltm  = $_POST['petroltm'];
+        $cngtm = $_POST['cngtm'];
+        $status = $_POST['status'];
+        $filename = $_FILES["uploadfile"]["name"];
+        $tempfile = $_FILES["uploadfile"]["tmp_name"];
+        $folder="newcarimages/".$filename;
+        move_uploaded_file($tempfile,$folder);
+        $sql = "INSERT INTO `carcorridor`.`cars` (`id`, `carname`, `brand`, `price`, `engine`, `power`, `torque`, `transmission`, `mileage`, `fuel`, `cylinder`, `capacity`, `fuelcapacity`, `steering`, `airbag`, `ac`, `petrolbm`, `cngbm`, `petroltm`, `cngtm`, `status`,`img`) VALUES (NULL, '$carname', '$brand', '$price', '$engine', '$power', '$torque', '$trans', '$mileage', '$fuel', '$cylinder', '$capacity', '$fuelcapacity', '$steering', '$airbag', '$capacity', '$petrolbm', '$cngbm', '$petroltm', '$cngtm', '$status','$folder')";
+        mysqli_query($conn,$sql);
     }
 ?>
-<!DOCTYPE html>
 <html>
     <head>
-        <title>CarConnect</title>
-        <link rel="stylesheet" href="buyoldcars.css">
-        <script>
-            if ( window.history.replaceState ) {
-            window.history.replaceState( null, null, window.location.href );
-            }
-            function showbox(){
-                document.getElementById('cardetail').style.visibility = "visible";
-            }
-            function configureDropDownLists(brand, carname) {
-              var Aston_Martin = ['Select Car Name','DBS Superleggera', 'DB11', 'Vantage','DBX','Valkyrie'];
+    <script>
+        if ( window.history.replaceState ) {
+          window.history.replaceState( null, null, window.location.href );
+        }
+        function configureDropDownLists(brand, carname) {
+              var Aston_Martin = ['DBS Superleggera', 'DB11', 'Vantage','DBX','Valkyrie'];
               var Audi = [
                 'Select Car Name',
               'A3',
@@ -92,7 +93,7 @@
               'iX3',
               'X5 xDrive45e',
               ];
-                var Bugatti =[
+              var Bugatti =[
                 'Select Car Name',
                 'Bugatti Chiron',
                  'Chiron Sport',
@@ -461,7 +462,7 @@
                 'Volvo EX90'
                 ];
 
-              switch (brand.value) {
+                switch (brand.value) {
                 case 'Aston Martin':
                 carname.options.length = 0;
                   for (i = 0; i < Aston_Martin.length; i++) {
@@ -658,7 +659,6 @@
                   ddl2.options.length = 0;
                   break;
               }
-          
             }
 
             function createOption(ddl, text, value) {
@@ -667,53 +667,12 @@
               opt.text = text;
               ddl.options.add(opt);
             }
-        </script>
-        <style>
-            #submitfilter:hover{
-                transform: scale(1.05);
-            }
-        </style>
+    </script>
     </head>
     <body>
-    <div id="nevimage">
-    <div id="nevbar">
-            <div id="title"><h1><b style="color: red;">C</b>ar<b style="color: red;">C</b>orridor</h1></div>
-            <div id="profilebox">
-                <button id="Profile"></button>
-                <div id="Account">
-                    <label id="usernameText">USERNAME</label><br>
-                    <div id="username" style="color:black;"><?php echo $_SESSION['username']?></div><br>
-                    <label id="emailText" >EMAIL</label><br>
-                    <div id="email" style="color:black;"><?php echo $_SESSION['email']?></div>
-                    <form method="post" action="logout.php"><button id="logout">LogOut</button></form>
-                </div>
-            </div>
-            <div id="tag">
-                <div id="HomeBG"><div id="Home" >Home</div></div>
-                <div id="BuyBG"><div id="Buy">Buy Cars</div>
-                    <div id="buyoption">
-                        <a href="ExploreNewCars.php" style="text-decoration: none;color:black;"><option id="buynewcar">Buy New Cars</option><a><hr>
-                        <a href="buyoldcars.php" style="text-decoration: none;color:black;"><option id="buyoldcar">Buy Old Cars</option></a><hr>
-                        <a href="" style="text-decoration: none;color:black;"><option id="comparecar">Compare Cars</option></a><hr>
-                        <a href="" style="text-decoration: none;color:black;"><option id="buyinghistory">Buying History</option></a>
-                    </div>
-                </div>
-                <div id="SellBG"><div id="Sell">Sell Cars</div>
-                    <div id="selloption">
-                        <a href="sellmycars.php" style="text-decoration: none;color:black;"><option id="sellmycar">Sell My Car</option></a><hr>
-                        <a href="" style="text-decoration: none;color:black;"><option id="sellinghistory">Selling History</option></a>
-                    </div>
-                </div>
-                <div id="InfoBG"><div id="Info">Cars Info.</div></div>
-                <div id="ServicesBG"><div id="Services">Services</div></div>
-            </div>  
-            <div id="hrline"></div> 
-        </div>
-    </div>
-        <div id="filter">
-            <form method="post" style="padding: 40px;">
-                <label id="brandtext" style="font-family: 'Trebuchet MS';">Select Car Brand</label><br>
-                <select id="brand" style="width: 250px;height:30px;font-size:large;" onchange="configureDropDownLists(this,document.getElementById('carname'))" name="brandfilter">
+        <form id="form" method="post">
+        <label id="brandtext">Select Brand</label>
+                <select id="brand" onchange="configureDropDownLists(this,document.getElementById('carname'))" name="brand">
                     <option>Select Brand</option>
                     <option>Aston Martin</option>
                     <option>Audi</option>          
@@ -749,100 +708,83 @@
                     <option>Volvo</option>
                 </select>
                 <br>
-                <label id="carnametext" style="font-family: 'Trebuchet MS';">Select Car Name</label><br>
-                <select id="carname" name="carnamefilter"style="width: 250px;height:30px;font-size:large;" >
+                <label id="carnametext">Select Car Name</label>
+                <select id="carname" name="carname">
                   <option>Select Car Name</option>
                 </select>
-                <label style="font-family: 'Trebuchet MS';">Min_Price</label>
-                <label style="font-family: 'Trebuchet MS';margin-left:55px;">Max_Price</label><br>
-                <input type="number" id="minprice" name="minprice" style="width: 115px;height:20px;font-size:large;" placeholder="Rs 00,00,000">
-                <input type="number" id="maxprice" name="maxprice" style="width: 115px;height:20px;font-size:large;" placeholder="Rs 00,00,000"><br><br>
-                <button id="submitfilter" type="submit" onclick="filter()" style="background-color:cornflowerblue;border-radius:2px;border:1px solid black;width:250px;height:30px;color:white;font-size:large;">REFRESH</button>
-            </form>
-        </div>
-        <div id="display" style="z-index: 0;">     
-                <?php
-                    include("connection.php");
-                    if($_SERVER['REQUEST_METHOD']=="POST"){
-                        if($_POST['carnamefilter']!= 'Select Car Name' && $_POST['brandfilter']!='Select Brand' && $_POST['minprice']=='' && $_POST['maxprice']==''){
-                            $carname = $_POST['carnamefilter'];
-                            $carbrand = $_POST['brandfilter'];
-                            $query = "SELECT * FROM `carcorridor`.`sellcars` where carname = '$carname' AND brand = '$carbrand'";
-                        }
-                        else if($_POST['brandfilter']!='Select Brand' && $_POST['carnamefilter']=='Select Car Name' && $_POST['minprice']=='' && $_POST['maxprice']==''){
-                            $carbrand = $_POST['brandfilter'];
-                            $query = "SELECT * FROM `carcorridor`.`sellcars` where brand = '$carbrand'";
-                        }
-                        else if($_POST['brandfilter']=='Select Brand' && $_POST['carnamefilter']=='Select Car Name' && $_POST['minprice']!='' && $_POST['maxprice']!=''){
-                            $minprice = $_POST['minprice'];
-                            $maxprice = $_POST['maxprice'];
-                            $query = "SELECT * FROM `carcorridor`.`sellcars` where price >= '$minprice' AND price<= '$maxprice'";
-                        }
-                        else if($_POST['brandfilter']!='Select Brand' && $_POST['carnamefilter']!='Select Car Name' && $_POST['minprice']!='' && $_POST['maxprice']!=''){
-                            $minprice = $_POST['minprice'];
-                            $maxprice = $_POST['maxprice'];
-                            $carname = $_POST['carnamefilter'];
-                            $carbrand = $_POST['brandfilter'];
-                            $query = "SELECT * FROM `carcorridor`.`sellcars` where carname = '$carname' AND brand = '$carbrand' AND price >= '$minprice' AND price<= '$maxprice'";
-                        }
-                        else if($_POST['brandfilter']!='Select Brand' && $_POST['carnamefilter']=='Select Car Name' && $_POST['minprice']!='' && $_POST['maxprice']!=''){
-                            $minprice = $_POST['minprice'];
-                            $maxprice = $_POST['maxprice'];
-                            $carbrand = $_POST['brandfilter'];
-                            $query = "SELECT * FROM `carcorridor`.`sellcars` where price >= '$minprice' AND price<= '$maxprice' AND brand = '$carbrand'";
-                        }
-                        else if($_POST['brandfilter']=='Select Brand' && $_POST['carnamefilter']=='Select Car Name' && $_POST['minprice']!='' && $_POST['maxprice']==''){
-                            $minprice = $_POST['minprice'];
-                            $query = "SELECT * FROM `carcorridor`.`sellcars` where price >= '$minprice'";
-                        }
-                        else if($_POST['brandfilter']=='Select Brand' && $_POST['carnamefilter']=='Select Car Name' && $_POST['minprice']=='' && $_POST['maxprice']!=''){
-                            $maxprice = $_POST['maxprice'];
-                            $query = "SELECT * FROM `carcorridor`.`sellcars` where price<= '$maxprice'";
-                        }
-                        else if($_POST['brandfilter']!='Select Brand' && $_POST['carnamefilter']!='Select Car Name' && $_POST['minprice']!='' && $_POST['maxprice']==''){
-                            $minprice = $_POST['minprice'];
-                            $carname = $_POST['carnamefilter'];
-                            $carbrand = $_POST['brandfilter'];
-                            $query = "SELECT * FROM `carcorridor`.`sellcars` where price >= '$minprice' AND carname = '$carname' AND brand = '$carbrand'";
-                        }
-                        else if($_POST['brandfilter']!='Select Brand' && $_POST['carnamefilter']!='Select Car Name' && $_POST['minprice']=='' && $_POST['maxprice']!=''){
-                            $maxprice = $_POST['maxprice'];
-                            $carname = $_POST['carnamefilter'];
-                            $carbrand = $_POST['brandfilter'];
-                            $query = "SELECT * FROM `carcorridor`.`sellcars` where price <= '$maxprice' AND carname = '$carname' AND brand = '$carbrand'";
-                        }
-                        else{
-                            $query = "SELECT * FROM `carcorridor`.`sellcars`";
-                        }
-                    }
-                    else{
-                        $query = "SELECT * FROM `carcorridor`.`sellcars`";  
-                    }
-                    $query_run = mysqli_query($conn,$query);
-                    $check_car = mysqli_num_rows($query_run)>0;
-                    if($check_car){
-                        while($row = mysqli_fetch_array($query_run)){
-                            ?>
-                            <div id="card">
-                                <form method="post" action="viewdetail.php">
-                                <img src="<?php echo $row["img"]?>" style="width: 155px;height: 100px;margin: 5px;" id="image"><br>
-                                <div style="white-space: nowrap;overflow:hidden;"><a id="carname" style="margin:8px;"><?php echo $row["carname"]; ?></a></div>
-                                <a id="carbrand" style="margin: 8px;"><?php echo $row["brand"] ?></a><br>
-                                <?php $value = moneyFormatIndia($row["price"])?>
-                                <a id="price" style="margin: 8px;font-size: 25px;overflow:scroll;">Rs<?php echo $value ?></a><br>
-                                <a id="city" style="margin: 8px;font-size: small;"><?php echo $row["city"] ?></a>,<a id="state" style="font-size: small;"><?php echo $row["state"] ?></a><br>
-                                <button id="viewdetail" type="submit">View Detail</button>
-                                <input name="id" value="<?php echo $row["id"]?>" style="visibility: hidden;">
-                                </form> 
-                            </div>  
-                            <?php
-                        }
-                    }
-                    else{
-                        echo "no car found";
-                    }
-                ?>     
-        </div>         
-    </div>
+                <br>
+                <label>Engine :</label>
+                <input type="text" id="engine" name="engine">
+                <br>
+                <label>Power :</label>
+                <input type="text" name="power">
+                <br>
+                <label>Torque :</label>
+                <input type="text" name="torque">
+                <br>
+                <label>transmission :</label>
+                <input type="text" name="trans">
+                <br>
+                <label>mileage :</label>
+                <input type="text" name="milege">
+                <br>
+                <label id="fueltext">Select Fuel Type</label>
+                <select id="fuel" name="fuel">
+                  <option>Select Fuel</option>
+                  <option>Petrol</option>
+                  <option>Diesel</option>
+                  <option>CNG</option>
+                  <option>LPG</option>
+                  <option>Battery Electric Vehicle</option>
+                  <option>Plug-in Hybrid Electric Vehicle</option>
+                  <option>Hybrid Electric Vehicle</option>
+                  <option>Racing Fuel</option>
+                </select>
+                <br>
+                <label>Cylinger :</label>
+                <input type="text" name="cylinder">
+                <br>
+                <label>Capacity :</label>
+                <input type="text" name="capacity">
+                <br>
+                <label>Fuel Capacity :</label>
+                <input type="text" name="fuelcapacity">
+                <br>
+                <label>Steering :</label>
+                <input type="text" name="steering">
+                <br>
+                <label>Airbag :</label>
+                <input type="text" name="airbag">
+                <br>
+                <label>Ac :</label>
+                <input type="text" name="ac">
+                <br>
+                <label>PetrolBM :</label>
+                <input type="text" name="petrolbm">
+                <br>
+                <label>CngBM :</label>
+                <input type="text" name="cngbm">
+                <br>
+                <label>PetrolTM :</label>
+                <input type="text" name="petroltm">
+                <br>
+                <label>cngTM :</label>
+                <input type="text" name="cngtm">
+                <br>
+                <label id="imagetext">Uplode Image</label>
+                <input type="file" name="uploadfile" required><br>
+                <label>Status :</label>
+                    <select name="status">
+                        <option>Normal</option>
+                        <option>Populer</option>
+                        <option>Tranding</option>
+                        <option>NewRelese</option>
+                        <option>Upcoming</option>
+                    </select>
+                <br>
+                <label id="pricetext">Price</label>
+                <input type="number" style="font-size: large;text-align:center;" id="price" placeholder="Rs 00,00,000" name="price" required><br><br>
+                <button type="submit" id="button">Submit</button>
+        </form>
     </body>
 </html>
