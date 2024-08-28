@@ -10,11 +10,12 @@
         $result = mysqli_query($conn,$sql);
         $num = mysqli_num_rows($result);
         $data = mysqli_fetch_array($result);
+        $_SESSION['new']= $data['id'];
         if($num==1){
             $login = true;
             $_SESSION['loggedin'] = $login;
             $_SESSION['username'] = $data['username'];
-            $_SESSION['email'] = $data['email'];    
+            $_SESSION['email'] = $data['email'];  
             header("location:Main.php");
         }
         else{
