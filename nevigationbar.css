@@ -1,0 +1,525 @@
+#title{
+    font-family: 'Trebuchet MS';
+    display: flex;
+    position: absolute;
+    left: 5%;
+    top: 25px;
+}
+#nevimage{
+    height: 135px;
+    margin-top: -10px;
+    padding-top: 10px;
+    margin-left: -10px;
+    margin-right: -8px;
+    background-color: rgb(39, 39, 39);
+    color: white;
+}
+#nevbar{
+    display: flex;
+}
+#Login{
+    width: 100px;
+    height: 40px;
+    background-color: rgb(17, 195, 255);
+    border-radius: 5px;
+    position: absolute;
+    left: 80%;
+    top: 45px;
+    border: 0px black solid;
+    font-family: 'Trebuchet MS';
+    font-size: large;
+    box-shadow: 0px 0px 1px rgb(0, 0, 0);
+    transform: scale(0.95);
+    text-shadow:0px 0px 1px rgb(0, 0, 0) ;
+}
+#Login:hover{
+    box-shadow: 0px 0px 6px silver;
+    background-color:  rgb(60, 206, 255);
+    transform: scale(1);
+}
+#SignUp{
+    width: 100px;
+    height: 40px;
+    background-color: rgb(255, 122, 122);
+    border-radius: 5px;
+    position: absolute;
+    left: 88%;
+    top: 45px;
+    border: 0px black solid;
+    font-family: 'Trebuchet MS';
+    font-size: large;
+    box-shadow: 0px 0px 1px rgb(0, 0, 0);
+    transform: scale(0.95);
+    text-shadow:0px 0px 1px rgb(0, 0, 0) ;
+}
+#SignUp:hover{
+    box-shadow: 0px 0px 6px silver;
+    background-color:  rgb(255, 122, 122);
+    transform: scale(1);
+}
+#HomeBG,#BuyBG,#SellBG,#InfoBG,#ServicesBG{
+    height: 35px;
+    margin-top: -5px;
+    text-align: center;
+    background: transparent; 
+    z-index: 2;
+    cursor: pointer;
+}
+#Home,#Buy,#Sell,#Info,#Services{
+    position: absolute;
+    top: -2px;
+    width: 120px;
+    height: 26px;
+    padding-top: 2px;
+    background-color: white;
+    border-radius: 0px;
+    border-radius: 2px;
+    background: transparent;    
+}
+#tag{
+    display: flex;
+    position: absolute;
+    top: 15%;
+    left: 30%;
+    font-family: 'Trebuchet MS';
+    font-size: large;
+    font-weight: 1000;
+    /* text-shadow: 0px 0px 1px; */
+}
+#HomeBG{
+    width: 120px;
+}
+#BuyBG{
+    width: 120px;
+}
+#SellBG{        
+    width: 120px;
+}
+#InfoBG{
+    width: 120px;
+} 
+#ServicesBG{
+    width: 120px;
+}
+#Home:hover{
+    box-shadow: 0px 4px 0px rgb(255, 149, 79);
+    cursor:pointer;
+} 
+#Buy:hover{
+    box-shadow: 0px 4px 0px  rgb(255, 149, 79);
+    cursor:pointer;
+} 
+#Sell:hover{
+    box-shadow: 0px 4px 0px  rgb(255, 149, 79);
+    cursor:pointer;
+} 
+#Info:hover{
+    box-shadow: 0px 4px 0px  rgb(255, 149, 79);
+    cursor:pointer;
+} 
+#Services:hover{
+    box-shadow: 0px 4px 0px rgb(255, 149, 79);
+    cursor:pointer;
+}
+/* 
+#hrline{
+    width: 100%;
+    height: 2px;
+    background-color: rgb(124, 124, 124);
+    position:relative;
+    top: 133px;
+    z-index: 1;
+} */
+#BuyBG:hover #buyoption{
+    visibility: visible;
+}
+#SellBG:hover #selloption{
+    visibility: visible;
+}
+#BuyBG:hover,#SellBG:hover,#HomeBG:hover,#ServicesBG:hover,#InfoBG:hover{
+    background-color: rgb(71, 71, 71);
+}
+#buyoption{
+    background-color: rgb(255, 255, 255);
+    width: 100px;
+    height: auto;
+    position: absolute;
+    display: block;
+    top: 30px;
+    left: 120px;
+    z-index: 3;
+    font-family: 'Trebuchet MS';
+    font-size:  medium;
+    padding: 10px;
+    padding-top: -10px;
+    padding-bottom: -10px;
+    border-radius: 2px;
+    text-align: center;
+    border: 1px solid black;
+    box-shadow: 0px 1px 4px;
+    visibility: hidden;
+    cursor: pointer;
+}
+#selloption{
+    background-color: rgb(255, 255, 255);
+    width: 100px;
+    height: auto;
+    position: absolute;
+    display: block;
+    top: 30px;
+    left: 240px;
+    z-index: 3;
+    font-family: 'Trebuchet MS';
+    font-size:  medium;
+    padding: 10px;
+    border-radius: 2px;
+    text-align: center;
+    border: 1px solid black;
+    box-shadow: 0px 1px 4px;
+    visibility:hidden;
+    cursor: pointer;
+}
+#buynewcar,#buyoldcar,#comparecar,#buyinghistory,#sellmycar,#sellinghistory{
+    margin: -8px;
+    height: 25px;
+    padding-top: 5px;
+    margin-left: -10px;
+    margin-right: -10px;
+    border-radius: 2px;
+}
+#buynewcar:hover,#buyoldcar:hover,#comparecar:hover,#buyinghistory:hover,#sellmycar:hover,#sellinghistory:hover{
+    background-color: rgb(188, 188, 188);
+    cursor: pointer;
+}
+#rSignUp{
+    font-size: 25px;
+    margin-top: -5px;
+    margin-bottom: -10px;
+    font-family:Arial;
+}
+#RForm{
+    background-color: white;
+    width: 350px;
+    height: auto;
+    padding-bottom: 35px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgb(133, 133, 133);
+    position: fixed;
+    top: 140px;
+    left: 40%;
+    text-align: center;
+    z-index: 4;
+}
+#username,#email,#pass,#confpass,#mobileno{
+    width: 280px;
+    height: 35px;
+    border: 2px solid black;
+    border-radius: 5px;
+    font-family:'Trebuchet MS';
+}
+#nametext,#passtext,#emailtext,#conftext,#mobiletext,#gotologin{
+    font-family:'Trebuchet MS';
+    position: relative;
+}
+#nametext{
+    right: 82px;
+} #passtext{
+    right: 63px;
+} #emailtext{
+    right: 101px;
+} #conftext{
+    right: 80px;
+} #mobiletext{
+    right: 66px;
+} #gotologin{
+    right: 40px;
+    color: blue;
+    cursor: pointer;
+}
+#submmit{
+    width: 290px;
+    height: 40px;
+    border-radius: 5px;
+    border: 0px ;
+    box-shadow: 0px 0px 2px;
+    font-family:'Trebuchet MS';
+    background: linear-gradient(to right ,purple, darkblue,blue);
+    /* background-color: lightcoral; */
+    font-size: medium;
+    color: white;
+    font-weight:800;
+}
+#submmit:hover{
+    box-shadow: 0px 0px 5px rgb(120, 120, 151);
+    transform: scale(1.06);
+    cursor: pointer;
+}
+#login{
+    font-size: 25px;
+    margin-top: -5px;
+    margin-bottom: -10px;
+    font-family:Arial;
+}
+#LForm{
+    background-color: white;
+    width: 350px;
+    height: auto;
+    padding-bottom: 35px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgb(133, 133, 133);
+    position: fixed;
+    top: 180px;
+    left: 40%;
+    text-align: center;
+    z-index: 4;
+}
+#lusername,#lemail,#lpass,#lconfpass,#lmobileno{
+    width: 280px;
+    height: 35px;
+    border: 2px solid black;
+    border-radius: 5px;
+    font-family:'Trebuchet MS';
+}
+#lnametext,#lpasstext,#lemailtext,#lconftext,#lmobiletext,#gotosignup{
+    font-family:'Trebuchet MS';
+    position: relative;
+} #lpasstext{
+    right: 89px;
+} #lemailtext{
+    right: 101px;
+} #gotosignup{
+    right: 44px;
+    color: blue;
+    cursor: pointer;
+}
+#lsubmmit{
+    width: 290px;
+    height: 40px;
+    border-radius: 5px;
+    border: 0px ;
+    box-shadow: 0px 0px 2px;
+    font-family:'Trebuchet MS';
+    background: linear-gradient( to right , rgb(96, 207, 255),rgb(104, 219, 136) ,rgb(94, 255, 94));
+    /* background-color: rgb(128, 188, 240); */
+    color: white;
+    font-size: medium;
+    font-weight:800;
+}
+#lsubmmit:hover{
+    box-shadow: 0px 0px 5px rgb(120, 120, 151);
+    transform: scale(1.06);
+    cursor: pointer;
+}
+#close{
+    width: 32px;
+    height: 32px;
+    position: absolute;
+    top: -6px;
+    right: -8px;
+    background-color: rgb(255, 120, 120);
+    border: 1px black solid;
+    border-radius: 4px;
+}
+#close:hover{
+    transform: scale(1.1);
+}
+.slideshow-container {
+    max-width: 1300px;
+    position: relative;
+    margin: auto;
+    max-height: 600px;
+    background-color: black;
+    box-shadow: 4px 4px 5px black;
+  }
+  
+  .mySlides {
+    display: none;
+   
+  }
+  
+  .prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+  }
+  
+  .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+  }
+  
+  .prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+  }
+  
+  .text {
+    color: #f2f2f2;
+    font-size: 45px;
+    padding: 8px 12px;
+    position: absolute;
+    top:30%;
+    left:20%;
+    font-family:Cambria;
+    font-weight: bold;
+    text-shadow: 3px 3px 5px black;
+  }
+  .desc{
+      color: #f2f2f2;
+      font-size: 25px;
+      padding: 8px 12px;
+      position: absolute;
+      top:40%;
+      left:20%;
+      font-family:Cambria;
+      width: 350px;
+      height: 100px;
+      text-shadow: 3px 3px 5px black;
+  }
+  
+  .numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+  }
+  
+  .dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+  }
+  
+  .active, .dot:hover {
+    background-color: #717171;
+  }
+  
+  .fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+  }
+  
+  @keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+  }
+  #populercars{
+      width: 400px;
+      height: 300px;
+      margin-left: 100px;
+      margin-right: 50px;
+      background-size: contain;
+      background-repeat: no-repeat;
+      box-shadow: 4px 4px 5px black;
+  }
+  #image{
+      width:400px;
+      height: 300px;
+  }
+  #cardetails{
+      position: relative;
+      top:-280px;
+      left: 20px;
+      background: rgb(0, 0, 0);
+      background: rgba(0, 0, 0, 0.5); 
+      color: #f1f1f1; 
+      width: 200px;
+      text-align: center;
+      font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  }
+  #populercartext{
+      position: absolute;
+      bottom: 0;
+      background: rgb(0, 0, 0);
+      background: rgba(0, 0, 0, 0.5); 
+      color: #f1f1f1; 
+      width: 400px;
+      text-align: center;
+      font-family: Georgia;
+  }
+  #trendingcars{
+      width: 400px;
+      height: 300px;
+      box-shadow: 4px 4px 5px black;
+  }
+  #electriccars{
+      width: 400px;
+      height: 300px;
+      margin-left: 50px;
+      margin-right: 100px;
+      box-shadow: 4px 4px 5px black;
+  }
+  body{
+      background-color: rgb(61, 61, 61);
+  }
+  #portals{
+      position: relative;
+      border: 0px solid white;
+      display: flex;
+      margin-top: 40px;
+  }
+  #sellcars{
+      position: relative;
+      width: 600px;
+      height: 400px;
+      background-color: yellow;
+      margin-left: 100px;
+      margin-right: 50px;
+      box-shadow: 4px 4px 5px black;
+  }
+  #buyoldcars{
+      position: relative;
+      width: 600px;
+      height: 400px;
+      margin-right: 100px;
+      margin-left: 50px;
+      box-shadow: 4px 4px 5px black;
+  }
+  #sellcartext{
+      position: absolute;
+      bottom: 0;
+      background: rgb(0, 0, 0);
+      background: rgba(0, 0, 0, 0.5); 
+      color: #f1f1f1; 
+      width: 600px;
+      height: 150px;
+      text-align: center;
+      font-family:'Trebuchet MS';
+      font-weight: bold;
+  }
+  #sellcarbutton{
+      width: 350px;
+      height: 50px;
+      font-size: x-large;
+      color: white;
+      background-color: black;
+      background: transparent;
+      font-weight: bold;
+      border: 2px white solid;
+      border-radius: 5px;
+  }
+  #sellcarbutton:hover{
+      transform: scale(1.05);
+  }
+  #rulestext{
+      position: relative;
+      border: 0px solid white;
+      margin-top: 40px;
+      padding-left: 100px;
+      font-family: 'Trebuchet MS';
+      color: white;
+  }

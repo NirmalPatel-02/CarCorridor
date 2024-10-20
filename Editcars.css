@@ -1,0 +1,505 @@
+#title{
+    font-family: 'Trebuchet MS';
+    display: flex;
+    position: absolute;
+    left: 5%;
+    top: 25px;
+}
+#nevimage{
+    height: 135px;
+    margin-top: -10px;
+    padding-top: 10px;
+    margin-left: -10px;
+    margin-right: -8px;
+    background-color: rgb(39, 39, 39);
+    color: white;
+}
+#nevbar{
+    display: flex;
+}
+#Login{
+    width: 100px;
+    height: 40px;
+    background-color: rgb(60, 206, 255);
+    border-radius: 10px;
+    position: absolute;
+    left: 80%;
+    top: 45px;
+    border: 0px black solid;
+    font-family: 'Trebuchet MS';
+    font-size: large;
+    box-shadow: 0px 0px 2px rgb(0, 191, 255);
+    transform: scale(0.95);
+    text-shadow:0px 0px 5px rgb(0, 128, 255) ;
+}
+#Login:hover{
+    box-shadow: 0px 0px 6px silver;
+    background-color:  rgb(60, 206, 255);
+    transform: scale(1);
+}
+#SignUp{
+    width: 100px;
+    height: 40px;
+    background-color: rgb(255, 122, 122);
+    border-radius: 10px;
+    position: absolute;
+    left: 88%;
+    top: 45px;
+    border: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: large;
+    box-shadow: 0px 0px 2px red;
+    transform: scale(0.95);
+    text-shadow:0px 0px 5px rgb(255, 9, 9) ;
+}
+#SignUp:hover{
+    box-shadow: 0px 0px 6px silver;
+    background-color:  rgb(255, 122, 122);
+    transform: scale(1);
+}
+#HomeBG,#BuyBG,#SellBG,#InfoBG,#ServicesBG{
+    height: 35px;
+    margin-top: -5px;
+    text-align: center;
+    background: transparent; 
+    z-index: 2;
+    cursor: pointer;
+}
+#Home,#Buy,#Sell,#Info,#Services{
+    position: absolute;
+    top: -2px;
+    width: 120px;
+    height: 26px;
+    padding-top: 2px;
+    background-color: white;
+    border-radius: 0px;
+    border-radius: 2px;
+    background: transparent;    
+}
+#tag{
+    display: flex;
+    position: absolute;
+    top: 15%;
+    left: 30%;
+    font-family: 'Trebuchet MS';
+    font-size: large;
+    font-weight: 1000;
+    /* text-shadow: 0px 0px 1px; */
+}
+#HomeBG{
+    width: 120px;
+}
+#BuyBG{
+    width: 120px;
+}
+#SellBG{        
+    width: 120px;
+}
+#InfoBG{
+    width: 120px;
+} 
+#ServicesBG{
+    width: 120px;
+}
+#Home:hover{
+    box-shadow: 0px 4px 0px rgb(255, 149, 79);
+    cursor:pointer;
+} 
+#Buy:hover{
+    box-shadow: 0px 4px 0px  rgb(255, 149, 79);
+    cursor:pointer;
+} 
+#Sell:hover{
+    box-shadow: 0px 4px 0px  rgb(255, 149, 79);
+    cursor:pointer;
+} 
+#Info:hover{
+    box-shadow: 0px 4px 0px  rgb(255, 149, 79);
+    cursor:pointer;
+} 
+#Services:hover{
+    box-shadow: 0px 4px 0px rgb(255, 149, 79);
+    cursor:pointer;
+}
+#profilebox{
+    display: block;
+    position: absolute;
+    top: 45px;
+    left: 90%;
+    font-family: 'Trebuchet MS';
+    z-index: 2;
+}
+#Profile{
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+    border: 0px;
+    box-shadow: 0px 0px 4px;
+    background-image: url('ZProfile.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 2;
+}
+#Account{
+    display: block;
+    width:  200px;
+    height: auto;
+    background-color: rgb(255, 255, 255);
+    position: absolute;
+    left: -80px;
+    border-radius: 5px;
+    border: solid black 2px;
+    text-align: left;
+    box-shadow: 0px 0px 5px;
+    visibility: hidden;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
+    z-index: 2;
+}
+#profilebox:hover #Account{
+    visibility: visible;
+    z-index: 2;
+}
+#usernameText,#emailText{
+    font-family: Arial;
+}
+#username,#email{
+    border:2px black solid;
+    overflow:auto;
+    border-radius: 3px;
+    padding: 2px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+#logout{
+    position: relative;
+    left: 30%;
+    margin-top: 10px;
+    height: 30px;
+    width: 80px;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: lightblue;
+    font-weight: 600;
+    border-radius: 5px;
+}
+#logout:hover{
+    transform: scale(1.06);
+}
+#hrline{
+    width: 100%;
+    height: 2px;
+    background-color: rgb(124, 124, 124);
+    position:relative;
+    top: 133px;
+    z-index: 1;
+}
+#BuyBG:hover #buyoption{
+    visibility: visible;
+}
+#SellBG:hover #selloption{
+    visibility: visible;
+}
+#BuyBG:hover,#SellBG:hover,#HomeBG:hover,#ServicesBG:hover,#InfoBG:hover{
+    background-color: rgb(71, 71, 71);
+}
+#buyoption{
+    background-color: rgb(255, 255, 255);
+    width: 100px;
+    height: auto;
+    position: absolute;
+    display: block;
+    top: 30px;
+    left: 120px;
+    z-index: 3;
+    font-family: 'Trebuchet MS';
+    font-size:  medium;
+    padding: 10px;
+    padding-top: -10px;
+    padding-bottom: -10px;
+    border-radius: 2px;
+    text-align: center;
+    border: 1px solid black;
+    box-shadow: 0px 1px 4px;
+    visibility: hidden;
+    cursor: pointer;
+}
+#selloption{
+    background-color: rgb(255, 255, 255);
+    width: 100px;
+    height: auto;
+    position: absolute;
+    display: block;
+    top: 30px;
+    left: 240px;
+    z-index: 3;
+    font-family: 'Trebuchet MS';
+    font-size:  medium;
+    padding: 10px;
+    border-radius: 2px;
+    text-align: center;
+    border: 1px solid black;
+    box-shadow: 0px 1px 4px;
+    visibility:hidden;
+    cursor: pointer;
+}
+#buynewcar,#buyoldcar,#comparecar,#buyinghistory,#sellmycar,#sellinghistory{
+    margin: -8px;
+    height: 25px;
+    padding-top: 5px;
+    margin-left: -10px;
+    margin-right: -10px;
+    border-radius: 2px;
+}
+#buynewcar:hover,#buyoldcar:hover,#comparecar:hover,#buyinghistory:hover,#sellmycar:hover,#sellinghistory:hover{
+    background-color: rgb(188, 188, 188);
+    cursor: pointer;
+}
+#sellform{
+    position: absolute;
+    width:1130px;
+    height: 700px; 
+    top: 20%;
+    left: 18%;
+    border: 1px black solid;
+    border-radius: 10px;
+    font-family: 'Trebuchet MS';
+    padding: 20px;
+    font-size: large;
+    background-color: white;
+    padding-top: 40px;
+    visibility: hidden;
+    z-index: 3;
+}
+#header{
+    position: absolute;
+    top: 200px;
+    left: 720px;
+    font-size: x-large;
+    font-family: 'Trebuchet MS';
+    font-weight:600;
+}
+#titleofform{
+    margin-left: 38%;
+    font-size: 22px;
+}
+#brandtext{
+    position: absolute;
+    top: 100px;
+    left: 200px;
+}#carnametext{
+    position: absolute;
+    top: 100px;
+    left: 650px;
+}
+#fueltext{
+    position: absolute;
+    top: 200px;
+    left: 200px;
+} #registtext{
+    position: absolute;
+    top: 200px;
+    left: 650px;
+} #ownershiptext{
+    position: absolute;
+    top: 300px;
+    left: 200px;
+} #kmtext{
+    position: absolute;
+    top: 300px;
+    left: 650px;
+} #location{
+    position: absolute;
+    top: 380px;
+    left: 200px;
+
+} #statetext{
+    position: absolute;
+    top: 400px;
+    left: 200px;
+
+} #citytext{
+    position: absolute;
+    top: 400px;
+    left: 650px;
+
+} #mobiletext{
+    position: absolute;
+    top: 500px;
+    left: 650px;
+
+} #imagetext{
+    position: absolute;
+    top: 500px;
+    left: 200px;
+} #pricetext{
+    
+    position: absolute;
+    top: 600px;
+    left: 200px;
+    
+}
+#brand{
+    position: absolute;
+    top: 125px;
+    left: 200px;
+    width: 350px;
+    height: 35px;
+}
+#carname{
+    position: absolute;
+    top: 125px;
+    left: 650px;
+    width: 350px;
+    height: 35px;
+}
+#fuel{
+    position: absolute;
+    top: 225px;
+    left: 200px;
+    width: 350px;
+    height: 35px;
+}
+#registrationyear{
+    position: absolute;
+    top: 225px;
+    left: 650px;
+    width: 350px;
+    height: 35px;
+}
+#carownership{
+    position: absolute;
+    top: 325px;
+    left: 200px;
+    width: 350px;
+    height: 35px;
+}
+#km{
+    position: absolute;
+    top: 325px;
+    left: 650px;
+    width: 350px;
+    height: 35px;
+}
+#city{
+    position: absolute;
+    top: 425px;
+    left: 650px;
+    width: 350px;
+    height: 35px;
+}
+#state{
+    position: absolute;
+    top: 425px;
+    left: 200px;
+    width: 350px;
+    height: 35px;
+}
+#mobile{
+    position: absolute;
+    top: 525px;
+    left: 650px;
+    width: 342px;
+    height: 28px;
+}
+#file{
+    position: absolute;
+    top: 525px;
+    left: 200px;
+}
+#price{
+    position: absolute;
+    top: 625px;
+    left: 200px;
+    width: 790px;
+    height: 32px;
+}
+#close{
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    border-radius: 2px;
+    top: 8px;
+    right: 8px;
+    background-color:rgb(255, 99, 99);
+    padding: 5px;
+    font-weight: bold;
+    font-size: x-large;
+    text-align: center;
+    padding: 10px;
+    z-index: 4;
+}
+#close:hover{
+    cursor: pointer;
+}
+#sellbutton{
+    position: absolute;
+    top: 700px;
+    left: 200px;
+    width: 800px;
+    height: 36px;
+    background-color: rgb(105, 188, 255);
+    border: 1px;
+    border-radius: 5px;
+    font-size: large;
+    text-shadow: 0px 0px 1px;
+}
+#sellbutton:hover{
+    transform: scale(1.05);
+}
+#panel{
+    background-color: rgb(255, 119, 95);
+    width: 220px;
+    height: 780px;
+    margin-bottom: -100px;
+    margin-left: -10px;
+    text-align: center;
+    border-right: 1px solid rgb(255, 255, 255);
+}
+#sellcarbutton,#historybutton,#trades{
+    width: 220px;
+    height: 50px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode';
+    font-size: large;
+    background: transparent;
+    border: 0px;
+    border-bottom: 1px solid rgb(255, 255, 255);
+    font-weight: bold;
+    color: white;
+}
+#sellcarbutton:hover,#historybutton:hover,#trades:hover{
+    background-color: rgb(255, 255, 255);
+    color:rgb(255, 119, 95);
+    font-weight: bold;
+}
+#adjust_box{
+    background-color: white;
+    width: 850px;
+    height: 400px;
+    position: absolute;
+    top: 280px;
+    left: 450px;
+    z-index: 1;
+    border-radius: 5px;
+}
+#list{
+    width: 850px;
+    height: 40px;
+    background-color: rgb(243, 243, 243);
+    border-radius: 5px;
+    z-index: 2;  
+    box-shadow: 2px 2px 2px;
+}
+#tempid{
+    visibility: hidden;
+}
+#editbutton{
+    background-image: url(edit.png);
+    background-repeat: no-repeat;
+    background-size:contain;
+    border: 0px;
+    background-color: rgb(243, 243, 243);
+}
+#editbutton:hover{
+    cursor: pointer;
+}

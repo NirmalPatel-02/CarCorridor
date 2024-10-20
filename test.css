@@ -1,0 +1,101 @@
+#title{
+    font-family: 'Trebuchet MS';
+    display: flex;
+    position: absolute;
+    left: 5%;
+}
+#nevbar{
+    display: flex;
+}
+#HomeBG,#BuyBG,#SellBG,#InfoBG,#ServicesBG{
+    height: 30px;
+    text-align: center;
+}
+#Home,#Buy,#Sell,#Info,#Services{
+    position: absolute;
+    top: -2px;
+    width: 120px;
+    height: 26px;
+    padding-top: 2px;
+    background-color: white;
+    border-radius: 0px;
+    border-radius: 2px;
+}
+#tag{
+    display: flex;
+    position: absolute;
+    top: 15%;
+    left: 30%;
+    font-family: 'Trebuchet MS';
+    font-size: large;
+    font-weight: 1000;
+    /* text-shadow: 0px 0px 1px; */
+}
+#HomeBG{
+    width: 120px;
+}
+#BuyBG{
+    width: 120px;
+}
+#SellBG{        
+    width: 120px;
+}
+#InfoBG{
+    width: 120px;
+} 
+#ServicesBG{
+    width: 120px;
+}
+#Home:hover{
+    box-shadow: 0px 4px 0px orange;
+    cursor:pointer;
+} 
+#Buy:hover{
+    box-shadow: 0px 4px 0px orange;
+    cursor:pointer;
+} 
+#Sell:hover{
+    box-shadow: 0px 4px 0px orange;
+    cursor:pointer;
+} 
+#Info:hover{
+    box-shadow: 0px 4px 0px orange;
+    cursor:pointer;
+} 
+#Services:hover{
+    box-shadow: 0px 4px 0px orange;
+    cursor:pointer;
+}
+#profilebox{
+    display: block;
+    position: absolute;
+    top: 5%;
+    left: 90%;
+    font-family: 'Trebuchet MS';
+}
+#Profile{
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+    
+    border: 0px;
+    box-shadow: 0px 0px 4px;
+    background-image: url('ZProfile.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#Account{
+    display: block;
+    width: 150px;
+    height: auto;
+    background-color: rgb(247, 245, 245);
+    position: absolute;
+    left: -50px;
+    border-radius: 5px;
+    text-align: center;
+    box-shadow: 0px 0px 2px;
+    visibility: hidden;
+}
+#profilebox:hover #Account{
+    visibility: visible;
+}
